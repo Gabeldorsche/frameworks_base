@@ -13,6 +13,19 @@
 -->
 <resources>
 
+    <!-- Whether Pixel props is enabled -->
+    <bool name="config_enablePixelProps">true</bool>
+
+    <!-- Build properties from a GMS certified device against current platform SPL level -->
+    <string-array name="config_certifiedBuildProperties" translatable="false">
+      <!--
+        <item>Build.DEVICE</item>
+        <item>Build.PRODUCT</item>
+        <item>Build.MODEL</item>
+        <item>Build.FINGERPRINT</item>
+      -->
+    </string-array>
+
     <!-- The list of components which should be automatically disabled for a specific device.
       Note: this MUST not be used to randomly disable components, ask for approval first! -->
      <string-array name="config_deviceDisabledComponents" translatable="false">
