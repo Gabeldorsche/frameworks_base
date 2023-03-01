@@ -293,6 +293,7 @@ import com.android.server.webkit.WebViewUpdateService;
 import com.android.server.wm.ActivityTaskManagerService;
 import com.android.server.wm.WindowManagerGlobalLock;
 import com.android.server.wm.WindowManagerService;
+import com.android.server.lineage.health.HealthInterfaceService;
 
 import dalvik.system.VMRuntime;
 
@@ -2676,6 +2677,10 @@ public final class SystemServer implements Dumpable {
             // PixysDeviceConfigService
             t.traceBegin("StartPixysDeviceConfigService");
             mSystemServiceManager.startService(PixysDeviceConfigService.class);
+            t.traceEnd();
+
+            t.traceBegin("StartHealthService");
+            mSystemServiceManager.startService(HealthInterfaceService.class);
             t.traceEnd();
 
             if (!com.android.server.flags.Flags.optionalBackgroundInstallControl()
