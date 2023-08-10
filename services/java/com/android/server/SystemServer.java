@@ -204,6 +204,7 @@ import com.android.server.os.SchedulingPolicyService;
 import com.android.server.pdb.PersistentDataBlockService;
 import com.android.server.people.PeopleService;
 import com.android.server.permission.access.AccessCheckingService;
+import com.android.server.pixys.PixysDeviceConfigService;
 import com.android.server.pm.ApexManager;
 import com.android.server.pm.ApexSystemServiceInfo;
 import com.android.server.pm.BackgroundInstallControlService;
@@ -2670,6 +2671,11 @@ public final class SystemServer implements Dumpable {
 
             t.traceBegin("StartMediaMetricsManager");
             mSystemServiceManager.startService(MediaMetricsManagerService.class);
+            t.traceEnd();
+
+            // PixysDeviceConfigService
+            t.traceBegin("StartPixysDeviceConfigService");
+            mSystemServiceManager.startService(PixysDeviceConfigService.class);
             t.traceEnd();
 
             if (!com.android.server.flags.Flags.optionalBackgroundInstallControl()
