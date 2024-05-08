@@ -274,7 +274,7 @@ import javax.inject.Named;
         UtilModule.class,
         NoteTaskModule.class,
         WalletModule.class,
-        ContextualEducationModule.class
+        ContextualEducationModule.class,
         QSModulePixys.class
         },
         subcomponents = {
