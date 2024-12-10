@@ -77,6 +77,7 @@ import com.android.internal.annotations.VisibleForTesting;
 import com.android.internal.app.AssistUtils;
 import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.settingslib.Utils;
 import com.android.systemui.res.R;
 import com.android.systemui.statusbar.phone.CentralSurfaces;
 
@@ -1410,11 +1411,13 @@ public final class KeyboardShortcutListSearch {
     }
 
     private int getColorOfTextColorOnAccent() {
-        return mContext.getColor(com.android.internal.R.color.materialColorOnPrimary);
+        return Utils.getColorAttrDefaultColor(
+                mContext, com.android.internal.R.attr.materialColorOnPrimary);
     }
 
     private int getColorOfTextColorSecondary() {
-        return mContext.getColor(com.android.internal.R.color.materialColorOnSurface);
+        return Utils.getColorAttrDefaultColor(
+                mContext, com.android.internal.R.attr.materialColorOnSurface);
     }
 
     // Create the new data structure for handling the N-to-1 key mapping and other complex case.
