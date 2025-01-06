@@ -296,13 +296,8 @@ public class PixelPropsUtils {
             } else if (packagesToChangePixel5a.contains(packageName)) {
                 propsToChange = propsToChangePixel5a;
             }
-
-            if (packageName.equals("com.google.android.apps.photos")) {
-                if (SystemProperties.getBoolean("persist.sys.pixelprops.gphotos", true)) {
-                    propsToChange = propsToChangePixelXL;
-                }
-            }
         }
+
         if (propsToChange == null || propsToChange.isEmpty()) return;
         dlog("Defining props for: " + packageName);
         for (Map.Entry<String, Object> prop : propsToChange.entrySet()) {

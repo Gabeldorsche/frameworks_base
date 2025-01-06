@@ -918,9 +918,6 @@ public class ApplicationPackageManager extends PackageManager {
 
             if (packageName.equals("com.google.android.apps.photos") && isGPhotosSpoofed) {
                 if (Arrays.asList(featuresPixel).contains(name)) {
-                    return false;
-                }
-                if (containsAny(name, featuresPixelOthers, featuresNexus)) {
                     return true;
                 }
             }
